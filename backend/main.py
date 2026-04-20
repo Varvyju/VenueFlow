@@ -184,3 +184,14 @@ if __name__ == "__main__":
         reload=False,
         log_level="info",
     )
+
+
+# ── Cache stats endpoint ──────────────────────────────────────
+@app.get("/api/cache/stats", tags=["Observability"], summary="Cache utilisation stats")
+async def cache_stats() -> dict:
+    """
+    Returns current hit/size statistics for all application caches.
+    Useful for monitoring translation and route cache efficiency.
+    """
+    from utils.cache import get_cache_stats
+    return get_cache_stats()

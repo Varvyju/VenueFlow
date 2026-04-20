@@ -318,9 +318,7 @@
     const { useState, useEffect, useRef, useCallback } = React;
 
     // ─────────────────────── API Config ──────────────────────
-    const API_BASE = window.location.origin.includes("localhost")
-      ? "http://localhost:8080"
-      : window.location.origin;
+    const API_BASE = "https://venueflow-backend-158600067035.us-central1.run.app"; //
 
     const api = {
       async post(path, body) {
